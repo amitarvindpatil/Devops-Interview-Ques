@@ -1,0 +1,30 @@
+Docker Interview Questions
+================================
+
+Q - Docker File for Java project
+
+-----------------------------------------------------------------------------------------------------------------
+Q - communication between 2 containers
+
+-----------------------------------------------------------------------------------------------------------------
+Q - can declare multiple CMD in Docker file?
+- No, we cannot declare
+
+-----------------------------------------------------------------------------------------------------------------
+Q - What is difference between Entrypoint and CMD in docker?
+
+
+-----------------------------------------------------------------------------------------------------------------
+Q - What is difference between Entrypoint and CMD in docker?
+
+-----------------------------------------------------------------------------------------------------------------
+Q - one container goes down,Have access the data of 1st container?
+
+-----------------------------------------------------------------------------------------------------------------
+Q - How allocate a memory and CPU utilization into Docker Docker container
+
+-> sudo docker run -it --memory="1g" ubuntu
+   sudo docker run -it --cpus="1.0" ubuntu
+   
+ 
+-----------------------------------------------------------------------------------------------------------------
