@@ -1,0 +1,58 @@
+Jenkis Interview Questions
+============================
+
+Q - what is shared liabraries?
+- A collection of groovy scripts between different jenkins jobs
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - Setup jenkins in High Availability mode is it possible to setup?
+Their is no direct way of setting up jenkins in high availability mode due to how jenkins manage its data.
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q- how will iterate the list in groovy?
+class Loop{
+	static void main(String[] args){
+		def data = [1,2,3,4,5]
+
+		for (i in data):
+			println(i)
+	}
+}
+-----------------------------------------------------------------------------------------------------------------
+
+Q - Difference between Scripted and declerative pipelines
+-----------------------------------------------------------------------------------------------------------------
+
+Q - Master - slave configuration in jenkins
+
+- Install java on master node
+- Install jenkins on master node
+- install java on slave node
+- create user and ssh keys on slave node
+- copy keys on master node in autherised key
+- join master node to slave
+- test the setup
+-----------------------------------------------------------------------------------------------------------------
+
+Q - How do we authenticate jenkins with other Ec2 instance
+
+- create ec2 instance and install jenkin on the server
+- login jenkins wiht admin user
+- install AWS EC2 plugins
+- install and restart server and back to dashboard
+
+- select configuration cloud, if their is no Cofiguration Nodes and cloud
+- Goto Manage Jenkins ->  Manage Nodes and clouds -> Add New Cloud (Amazon Ec2 Instance)
+  -> Add Ec2 credentials (Access key,Secret Access Key,SSH key,Region,Username - ec2-user)
+  and save
+-----------------------------------------------------------------------------------------------------------------
+
+Q - How to create Agent Nodes on jenkins?
+ ->  Manage Jenkins - Manage Nodes and cloud - New Node
+    - Node Name - agent1
+    - select perment agent - click on OK
+    - Details agent -> Name,description,Number of executer,Remote Root Directory(jenkins-root),Lables,Launch Method etc.
+    - Save
+-----------------------------------------------------------------------------------------------------------------
