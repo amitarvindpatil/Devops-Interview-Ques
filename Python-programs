@@ -1,0 +1,266 @@
+# Count Duplicate charact in string 
+input = "pythonnnnn"
+op = {}
+
+for i in input:
+    op[i] = input.count(i)
+
+print(op)
+
+-----------------------------------------------------------------------------------------------------------------
+# Factorial no. series
+
+n = 6
+
+fact = 1
+
+for i in range(1,n):
+    fact = fact * i
+
+    print(fact)
+
+-----------------------------------------------------------------------------------------------------------------
+# Fibbonacci series
+n = 10
+f1 = 0
+f2 = 1
+cnt = 0
+
+while(cnt < n):
+    print(f1)
+    tmp = f1 + f2
+    f1 = f2
+    f2 = tmp
+    cnt += 1
+
+-----------------------------------------------------------------------------------------------------------------
+# gcd
+x = 54
+y = 24
+for i in range(1,20):
+    if x % i == 0 and y % i == 0:
+        gcd = i
+print(gcd)
+
+-----------------------------------------------------------------------------------------------------------------
+# gcd from array
+def find_gcd(x,y):
+    x,y =y, x%y
+    return x
+ip = [50,20,30,40]
+n1 = ip[0]
+n2 = ip[1]
+
+
+gcd = find_gcd(n1,n2)
+
+for i in range(1,len(ip)):
+    gcd = find_gcd(gcd,ip[i])
+print(gcd)
+
+-----------------------------------------------------------------------------------------------------------------
+# Sort 
+
+
+ip = [50,20,30,40,45,34,34,32]
+
+b = len(ip) - 1
+for i in range(b):
+    for j in range(b-i):
+        if ip[j] > ip[j+1]:
+            tmp = ip[j]
+            ip[j] = ip[j+1]
+            ip[j+1] = tmp
+print(ip)
+
+-----------------------------------------------------------------------------------------------------------------
+# Non Duplicate value in 2 array
+
+
+ip = [50,20,30,40,45,34,34,32]
+ip1 = [90,30,10,20,30]
+op=[]
+ip.extend(ip1)
+for i in ip:
+    if ip.count(i) < 2:
+        op.append(i)
+print(op)
+
+-----------------------------------------------------------------------------------------------------------------
+# Palindrom
+ip = ["MADAM","SAM","HAH"]
+
+for i in ip:
+    if i == i[::-1]:
+        print("palindrom",i)
+    else:
+        print("not Palindrom",i)
+
+-----------------------------------------------------------------------------------------------------------------
+# Prime numbers
+for num in range(1,50):
+    if num > 1:
+        for i in range(2,num):
+            if num % i == 0:
+                break
+        else:
+            print(num) 
+
+-----------------------------------------------------------------------------------------------------------------
+# Remove Duplicate char from string
+ip = "pythonnnnn"
+
+sets = set()
+op = []
+
+for i in ip:
+    if i not in sets:
+        sets.add(i)
+        op.append(i)
+print("".join(op))
+
+-----------------------------------------------------------------------------------------------------------------
+# Sort dict by value
+
+ip = {'a':40,'f':10,'c':45}
+op = {}
+
+for i in sorted(ip,key=ip.get):
+    op[i]=ip[i]
+print(op)
+
+-----------------------------------------------------------------------------------------------------------------
+# Reverse String
+ip = "Amit"
+
+data = ip[::-1]
+print(data)
+
+-----------------------------------------------------------------------------------------------------------------
+# Permutations programs
+from itertools import permutations
+l = list(permutations("GOD"))
+print(l)
+
+-----------------------------------------------------------------------------------------------------------------
+# permutation without program
+
+
+def permutation(lst):
+	if len(lst) == 0:
+		return []
+
+	if len(lst) == 1:
+		return lst
+
+	l = []
+
+	for i in range(len(lst)) :
+		m = lst[i]
+		mlst = lst[:i] + lst[i+1:]
+
+		for p in permutation(mlst):
+			l.append(m+p)
+	return l
+data = list('GOD')
+for p in permutation(data):
+	print(p)
+
+-----------------------------------------------------------------------------------------------------------------
+# Combination program
+
+def combination(lst, n):
+     
+    if n == 0:
+        return [[]]
+     
+    l =[]
+    for i in range(0, len(lst)):	
+         
+        m = lst[i]
+        remLst = lst[i + 1:]
+         
+        remainlst_combo = combination(remLst, n-1)
+        for p in remainlst_combo:
+             l.append([m, *p])
+           
+    return l
+
+-----------------------------------------------------------------------------------------------------------------
+# Driver code
+
+arr ="GOD"
+print(combination([x for x in arr],2))
+
+
+# Sorting differ datatypes
+data = ['z','a','x',10,'$',5]
+op = []
+ls = []
+for i in data:
+	if type(i) == str:
+		op.append(ord(i))
+	else:
+		ls.append(i)
+output = []
+b = len(op) - 1
+for j in range(b):
+	for k in range(b-j):
+		if op[k] >= op[k+1]:
+			tmp = op[k]
+			op[k] = op[k+1]
+			op[k+1] = tmp
+
+d = len(ls) - 1
+for j in range(d):
+	for k in range(d-j):
+		if ls[k] >= ls[k+1]:
+			tmp = ls[k]
+			ls[k] = ls[k+1]
+			ls[k+1] = tmp
+for p in op:
+	output.append(chr(p))
+output.extend(ls)
+print(output)
+
+-----------------------------------------------------------------------------------------------------------------
+# Prefix program of strings
+
+
+data = ['akshat', 'akash', 'akshay', 'akshita']
+
+res = ''
+prefix = data[0]
+
+for i in data[1:]:
+	while i[:len(prefix)] != prefix and prefix:
+		prefix = prefix[:len(prefix)-1]
+		if not prefix:
+			break
+	res = prefix
+print(res)
+
+-----------------------------------------------------------------------------------------------------------------
+# Reverse whole sentance 
+num = "i.like.this.program.very.much"
+
+data = num.split('.')
+print(".".join(data[::-1]))
+
+-----------------------------------------------------------------------------------------------------------------
+# 
+with open("test.txt",'r+') as f1:
+    data = f1.read()
+
+print(" ".join(data.split()[::-1]))
+
+-----------------------------------------------------------------------------------------------------------------
+#  Sort by length of string
+strs = "Amit is a good programmer in his organization"
+
+data = list(strs.split())
+
+data.sort(key=len)
+print(data)
+
+-----------------------------------------------------------------------------------------------------------------
