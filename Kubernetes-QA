@@ -1,0 +1,31 @@
+Kubernetes Interview Questions
+================================
+
+Suppoes, I have deploymemnt of "nginx", i want to expose that deployment publically on port 443 what will you do?
+
+- create a file in docker and specify the details of port into specification section and run the command 
+ and inside kind : Deployement
+ - kubectl apply -f abc.yml 
+ 
+
+-----------------------------------------------------------------------------------------------------------------
+Q- how are you managing the ymal files
+- 
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+Q - how will you increase the replica-set
+- In replica-set .yml file we set kind:Replica-set and specific section we set Replicas: 4 
+and run kubectl apply -f replicaset.yml
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+Q - how to rollback the things on previous release?
+- kubectl rollout history deployment my-training
+- kubectl rollout undo deployment my-training
+ - rollback to previous one
+
+
+-----------------------------------------------------------------------------------------------------------------
