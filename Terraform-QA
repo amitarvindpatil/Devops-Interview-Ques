@@ -1,0 +1,45 @@
+terraform Interview Questions
+================================
+Q - when the run terraform.init what happens?
+- create working dirctory of config file for terraform
+-----------------------------------------------------------------------------------------------------------------
+
+Q - which directory it will create?
+- terraform/hashic/registry.terraform.io/providers/aws/4.10.3/
+ - create a binary file which is in encrypted mode
+- terraform.lock.hcl
+- terraform.tfstate.lock.info
+-----------------------------------------------------------------------------------------------------------------
+
+
+Q - what is providers in terraform?
+-----------------------------------------------------------------------------------------------------------------
+- Terraform plugins allow user to manage external plugins such Cloud Provides AWS,GCP and Azure
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - if i move the terraform state file into s3 bucket what will you add in terraform?
+- we need to specify the s3 bucket name,key- local path of .state file, region in terraform { backend "s3" {}} block
+
+-----------------------------------------------------------------------------------------------------------------
+
+ Q - What is the purpose of provisioner in terraform?
+-----------------------------------------------------------------------------------------------------------------
+
+ Q - What is the resource life cycle in terraform? prevent destroy Destroy in Terraform?
+
+-> Terraform init -> terraform plan -> terraform apply -> terraform destroy
+
+-> prevent destroy use to protect the importent resources from terraform destroy command
+lifecycle {
+  prevent_destroy = true
+ }
+-----------------------------------------------------------------------------------------------------------------
+
+ Q - What is terraform refresh?
+
+ "terrafrom refresh" is an alias of the "terraform apply -refresh-only -auto-approve" command
+ terraform refresh  for terrafrom plan or apply to refresh and update the statefile with making changes
+ to remote infrastructure
+
+-----------------------------------------------------------------------------------------------------------------
