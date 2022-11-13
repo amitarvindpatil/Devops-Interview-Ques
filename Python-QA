@@ -1,0 +1,146 @@
+python Interview Questions
+==========================================
+
+Q - Difference between sets and List?
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - What is Purpose of Generator in python?
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - What is Purpose of decorator?
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - Exception Handling in Python?
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - How do Unit testing in python?
+- we can use pytest,unittest libraries or packages import into python code
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - sort program?
+
+ip = [50,20,30,40,45,34,34,32]
+
+b = len(ip) - 1
+for i in range(b):
+    for j in range(b-i):
+        if ip[j] > ip[j+1]:
+            tmp = ip[j]
+            ip[j] = ip[j+1]
+            ip[j+1] = tmp
+print(ip)
+
+-----------------------------------------------------------------------------------------------------------------
+Q - Permmutations Program?
+
+ input - "GOD"
+
+ Output - ['GOD','GDO','OGD','ODG,'DOG','DGO']
+
+ def permutation(lst):
+	if len(lst) == 0:
+		return []
+
+	if len(lst) == 1:
+		return lst
+
+	l = []
+
+	for i in range(len(lst)) :
+		m = lst[i]
+		mlst = lst[:i] + lst[i+1:]
+
+		for p in permutation(mlst):
+			l.append(m+p)
+	return l
+data = list('GOD')
+for p in permutation(data):
+	print(p)
+
+-----------------------------------------------------------------------------------------------------------------
+Q - Program Prefix program of strings
+
+data = ['akshat', 'akash', 'akshay', 'akshita']
+
+output - ak
+
+
+Answer - 
+
+res = ''
+prefix = data[0]
+
+for i in data[1:]:
+	while i[:len(prefix)] != prefix and prefix:
+		prefix = prefix[:len(prefix)-1]
+		if not prefix:
+			break
+	res = prefix
+print(res)
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+Q - # Reverse whole sentance 
+
+num = "i.like.this.program.very.much"
+
+Answer - 
+
+data = num.split('.')
+print(".".join(data[::-1]))
+
+
+-----------------------------------------------------------------------------------------------------------------
+Q - #  Sort by length of string
+
+strs = "Amit is a good programmer in his organization"
+
+Answer
+=========
+data = list(strs.split())
+
+data.sort(key=len)
+print(data)
+-----------------------------------------------------------------------------------------------------------------
+
+Q - # Sorting differ datatypes
+
+data = ['z','a','x',10,'$',5]
+
+Answer
+=========
+op = []
+ls = []
+for i in data:
+	if type(i) == str:
+		op.append(ord(i))
+	else:
+		ls.append(i)
+output = []
+b = len(op) - 1
+for j in range(b):
+	for k in range(b-j):
+		if op[k] >= op[k+1]:
+			tmp = op[k]
+			op[k] = op[k+1]
+			op[k+1] = tmp
+
+d = len(ls) - 1
+for j in range(d):
+	for k in range(d-j):
+		if ls[k] >= ls[k+1]:
+			tmp = ls[k]
+			ls[k] = ls[k+1]
+			ls[k+1] = tmp
+for p in op:
+	output.append(chr(p))
+output.extend(ls)
+print(output)
+
+-----------------------------------------------------------------------------------------------------------------
