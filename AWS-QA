@@ -1,0 +1,172 @@
+AWS Questions
+===============
+
+Q - EKS cluster setup in private subnet?
+-----------------------------------------------------------------------------------------------------------------
+Q - Use case of lambda function?
+- copy content from s3 bucket and store it into dynamoDB or SQL
+- API gateway - lambda - DyanamoDB,RDS,s3 bucket
+- Serverless CRON jobs - Cloud Watch - Lambda
+- Event Process with SNS/SQS - User - (publish message) - SNS - SQS - Lambda
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+Q - What are the different way to authenticate compute instance?
+- using ssh key (pem key and ppk) we can connect instance
+- using session manager
+- and Direct connect throgh Console using browser
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - What is step() function in AWS?
+ - AWS step function is serverless function orchastrator that makes it easy to sequence
+ aws lambda function and multiple aws services into business-critical application
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - What is purpose of layers in Lambda? and How we can set layer for Lambda function?
+- Lambda are use to share a code amoung your lambda function
+ - code likes library or packages dependancies, 
+  - we put the packages in lambda layer and we take reference in lambda code
+  - so we create a zip file of the package and libraries goto the layers and upload it
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+Q- How lambda can be understand its Main function instead of Decorator function?
+ - Lambda function understand main function is declared inside runtime setting handler
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - How do we use lambda as rest-api?
+
+- We declared the API's logic into lambda function and integrate with API-Gateway service
+
+Q - How API gateway Lambda function Integrate
+- Create Lambda function set Runtime and upload your code
+- create api-gateway - Rest API - Resources - Action - create Method
+ - Integration Type - "lambda Function", region, Lambda function (arn or name)
+ - Enable CORS and then Deploy API
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - Suppoes we have Ec2 instance and python application running on it,python application sending abc.log,
+    How we can send abc.log file to cloud watch?
+
+-  Create IAM role and set required permission and attach to ec2-instance
+- install cloudwatch agent into instance
+- Prepare Configuration file into instance
+- Start the cloudwatch agent service in the instance
+- Monitor the logs using cloud watch on web console
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+Q - Explain the flow of CICD pipeline?
+ - CICD pipeline is work with Jenkins pipeline
+ - First CI part is work when the developer can push code changes in Version control system and automate the Building and testing code
+ - Second Part is Contineous Delivery refers Building testing and deliveing software code (mannual Deployment work here)
+ - Last Part is Contineous Deployment that developer push the code changes from remote repository to Production code automatically
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - How to authenticate API's in AWS
+-> Goto API-Gateway Create API -> Resouces -> Action create method (GET or PUT)
+-> Goto Authorizers section -> Create Authorizer-> 
+-> Select Type is Lambda or Congnito and select Token and set Token Source and Validation
+and create
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+Q -  What is cognito
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - How to create a stack in cloudformation? 
+- create stack -> upload code via s3 URl or from local
+- set name and parameters
+- Configure stack options such as Tags,permissions,Rollback Configuration,SNS 
+- Review and create Stackset
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - How we can use SSM parameter in CF template?
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+Q - What is cloudformation changeset?
+- Changeset is use to preview the stack configuration before creating stack
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - What is CF Drift Detection?
+- Drift detection occurs when you made action on resources that created throght cloudformation
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - What is maximum execution time in lambda function?
+- 15 mins
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - Different Storage classes in s3?
+- standart storage
+- infrequent access
+- One-Zone Infrequent access
+- Intellegence tearing
+- s3 glacier
+- s3 galcier deep archive
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+Q - RDS in private subnet,Access RDS instance on local machine?
+-> create Ec2 instance - security group -22
+   - Create RDS instance - security group - MYSQL -3306 and set private IP address
+   - open MYSQL Workbench -> set
+     - SSH HOSTNAME - Public DNS hostname of EC2
+     - SSH username - ec2-user
+     - SSH key - private key
+     - port - 3306 
+     - Hostname and password
+     - Test Connection
+-----------------------------------------------------------------------------------------------------------------
+
+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
+
+Q - site to site VPN connection?
+- By default instance that you launch in Amazon VPC is not able to connect your own(remote) Network
+- Using site to site connection you are able to access remote Network from your VPC.
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+Q - what is VPC Endpoints
+ - VPC Endpoints enable connection between VPC and supported services without using internet gateway,NAT gateway,VPN connection or
+ AWS Direct connection
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+Q - warm start and cold start in lambda
+Q - Saml configuration with AWS
+
+Q - Aws s3 bucket in Account A and i want access the bucket from Account B
+- Create A bucket and object into Accout A
+- create Bucket policy in Account A set Account B ARN(AccountID:Username) into Principle section,give Action of s3.getobject or putobject pemission in Resounce set ARN of Bucket
+- In Account B Create  user and attach the Inline policy as Action S3:ListBucket permision and Resounce as ARN of the s3 bucket
+
+Q - Configure Route53 with web application,getting error site can't be reach out? troubleshoot?
+- check DNSSEC configuration
+- check website public hosted zone resource record set
+- Check Domain name register in NS records
+- verify EPP status code for your domain
+
+
+Q - In which use case you use SQS service and SNS service?
+Q -  How do you authentication part in your project?
+- using OKTA and saml2
