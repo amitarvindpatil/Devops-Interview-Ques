@@ -1,0 +1,39 @@
+Linux Interview Questions
+=================================
+Q - suppoes you have linux instance, your are not able to create a file ?
+- permission issue
+- Disk space is full
+- partition issue
+
+-----------------------------------------------------------------------------------------------------------------
+Q - while run jar file facing standard error, how we will rewrite the error in the file?
+2 >& 1 
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - How to check running process on Linux
+- ps aux
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q- Which command use to find all the files size is more than 1 GB in directory 
+- find / -size +1G 
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - How to get a size of files of perticuler directories
+- sudo du -shc /var/*
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q - How to get list of open files
+
+- lsof | head
+
+-----------------------------------------------------------------------------------------------------------------
+Q - How to check CPU utilization memory utilization 
+
+- top
+
+-----------------------------------------------------------------------------------------------------------------
