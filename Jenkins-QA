@@ -66,3 +66,6 @@ Q - What are the plugins availble in Jenkins?
 - HTML Publisher
 
 -----------------------------------------------------------------------------------------------------------------
+Q - Limitations of Jenkins
+- Single server Architecture
+- Doen't Allow Server-to-server Fedration
