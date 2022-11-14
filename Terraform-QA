@@ -8,7 +8,7 @@ Q - which directory it will create?
 - terraform/hashic/registry.terraform.io/providers/aws/4.10.3/
  - create a binary file which is in encrypted mode
 - terraform.lock.hcl
-- terraform.tfstate.lock.info
+- terraform.tfstate.lock.info (ID,Operation- OperationTypeApply,who-Name of user,version,created-time,path-statefile)
 -----------------------------------------------------------------------------------------------------------------
 
 
