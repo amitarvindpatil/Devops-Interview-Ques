@@ -56,3 +56,13 @@ Q - How to create Agent Nodes on jenkins?
     - Details agent -> Name,description,Number of executer,Remote Root Directory(jenkins-root),Lables,Launch Method etc.
     - Save
 -----------------------------------------------------------------------------------------------------------------
+Q - What are the plugins availble in Jenkins?
+- Maven
+- Git 
+- AWS Ec2
+- Nexus
+- SonarQube
+- SonarIQbube
+- HTML Publisher
+
+-----------------------------------------------------------------------------------------------------------------
