@@ -26,5 +26,13 @@ Q - How allocate a memory and CPU utilization into Docker Docker container
 -> sudo docker run -it --memory="1g" ubuntu
    sudo docker run -it --cpus="1.0" ubuntu
    
+-----------------------------------------------------------------------------------------------------------------
+Q - can declare multiple FROM in Docker file?
+- Yes we can declare, 
+
+FROM centos as base
+
+FROM base as requirements
+ 
  
 -----------------------------------------------------------------------------------------------------------------
