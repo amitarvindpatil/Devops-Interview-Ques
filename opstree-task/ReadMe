@@ -1,0 +1,12 @@
+1 - create directory
+mkdir /mnt/data
+
+2 - create volume and set mount point
+docker volume create -d local-persist -o mountpoint=/mnt/data --name=persistent-volume
+
+3 - run docker image on container with port number on 8080 and mount persistent volume on container
+docker run -itd -p 8080:8080 --mount source=persistent-volume,target=/usr/share/nginx/html nginxapp bash
+
+4 - Lunch index.html or project file into /mnt/data and run on browser please check snapshot
+
+e.g. Goto browser and run ipaddress:8080
