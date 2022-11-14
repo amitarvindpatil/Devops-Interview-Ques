@@ -10,7 +10,10 @@ Q - which directory it will create?
 - terraform.lock.hcl
 - terraform.tfstate.lock.info (ID,Operation- OperationTypeApply,who-Name of user,version,created-time,path-statefile)
 -----------------------------------------------------------------------------------------------------------------
-
+Q - what is terraform taint?
+- Terraform taint command inform terraform that perticuler object has become Damaged
+so terraform marking object as "tainted" in the Terraform state file and terraform propose to replace it and create new plan
+-----------------------------------------------------------------------------------------------------------------
 
 Q - what is providers in terraform?
 -----------------------------------------------------------------------------------------------------------------
