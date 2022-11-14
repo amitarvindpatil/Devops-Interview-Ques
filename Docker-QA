@@ -13,7 +13,9 @@ Q - can declare multiple CMD in Docker file?
 -----------------------------------------------------------------------------------------------------------------
 Q - What is difference between Entrypoint and CMD in docker?
 
+CMD command ignored by Demons, where the parameter stated with Docker run
 
+ENTRYPOINT command not ingnored bt demons, instead appended as commandline parameter
 -----------------------------------------------------------------------------------------------------------------
 Q - What is difference between Entrypoint and CMD in docker?
 
