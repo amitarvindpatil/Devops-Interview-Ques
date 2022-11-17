@@ -23,9 +23,9 @@ Q - What is best practice to configure git repository?
 -----------------------------------------------------------------------------------------------------------------
 
 Q - What is Git Cherry-Pick
-
+Cherry picking is the act of picking a commit from a branch and applying it to another.
 -----------------------------------------------------------------------------------------------------------------
 
 Q - What is Git stash
-
+- Git stash allow to move one branch another branch without commiting current branch changes
 -----------------------------------------------------------------------------------------------------------------
